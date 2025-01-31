@@ -1,0 +1,29 @@
+name: Backup and Replace Webex JSON
+on:
+  push:
+    paths:
+      - "webex_uc2.json"
+
+jobs:
+  backup-and-replace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Rename old file as backup
+        run: |
+          if [ -f webex_uc.json ]; then
+            mv webex_uc.json "webex_uc_backup_$(date +%Y%m%d%H%M%S).json"
+          fi
+
+      - name: Rename new file to replace the old one
+        run: mv webex_uc2.json webex_uc.json
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-backup and replace webex_uc.json"
+          git push
