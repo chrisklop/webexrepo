@@ -1,0 +1,20 @@
+{
+    "+14234373093": {
+        "Practice": "Fast Pace Urgent Care / Clinic Site",
+        "IVR": 1,
+        "LocationId": "778",
+        "Name": "La Follette, TN",
+        "Address": "2019 Jacksboro Pike",
+        "City": "La Follette,",
+        "State": "Tennessee",
+        "Zip": "37766",
+        "Phone": "4234373093",
+        "Fax": "4234373094",
+        "TodaysBusinessHours": [
+            "08:00 am to 08:00 pm"
+        ],
+        "FrontDesk": "79778100",
+        "TimeZone": "US/Eastern",
+        "ClinicOpen": "planned"
+    }
+}
